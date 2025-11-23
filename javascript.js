@@ -1,4 +1,8 @@
 function add(a, b) {
     return a + b;
 };
-console.log(add(23, 9));
+
+function subtract(a, b) {
+    return a - b;
+};
+console.log(subtract(10, 3));
