@@ -31,4 +31,3 @@ function operate(op, a, b) {
         return alert('Cannot use that operator');
     };
 };
-console.log(operate('*', 20, 5));
