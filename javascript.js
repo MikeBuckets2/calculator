@@ -27,8 +27,6 @@ function operate(op, a, b) {
         return multiply(a, b);
     } else if (op === '/') {
         return divide(a, b);
-    } else {
-        return alert('Cannot use that operator');
     };
 };
 
@@ -40,14 +38,16 @@ function operate(op, a, b) {
 //the button shows in the display
 
 const display = document.querySelector('.display');
-const button = document.querySelector('.one');
-button.addEventListener('click', () => {
-    if (display.textContent == 0) {
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+     if (display.textContent == 0) {
         display.textContent = '';
-        display.textContent += 1;
-    } else {
-        display.textContent += 1;
-    };
+        display.textContent += button.textContent;
+     } else {
+        display.textContent += button.textContent;
+     };
+    });
 });
 
 const clear = document.querySelector('.clear');
