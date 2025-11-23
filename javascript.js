@@ -42,10 +42,15 @@ function operate(op, a, b) {
 const display = document.querySelector('.display');
 const button = document.querySelector('.one');
 button.addEventListener('click', () => {
-    display.textContent = 1;
+    if (display.textContent == 0) {
+        display.textContent = '';
+        display.textContent += 1;
+    } else {
+        display.textContent += 1;
+    };
 });
 
 const clear = document.querySelector('.clear');
 clear.addEventListener('click', () => {
-    display.textContent = '';
+    display.textContent = 0;
 });
