@@ -29,26 +29,21 @@ function operate(op, a, b) {
         return divide(a, b);
     };
 };
-
-// Create the functions that populate the display when you click the digit buttons. 
 // You should store the content of the display (the number) in a variable for use in the next step.
-
-//grab button
-//when you click the button
-//the button shows in the display
 
 const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        let displayValue = button.textContent;
+        let value = button.textContent;
      if (display.textContent == 0) {
-        display.textContent = displayValue;
+        display.textContent = value;
      } else {
-        display.textContent += displayValue;
+        display.textContent += value;
      };
     });
 });
+let displayValue = display.textContent;
 
 const clear = document.querySelector('.clear');
 clear.addEventListener('click', () => {
