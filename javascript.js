@@ -55,12 +55,17 @@ clear.addEventListener('click', () => {
 const operators = document.querySelectorAll('.operators');
 operators.forEach(button => {
     button.addEventListener('click', () => {
-        if (displayValue > 0) {
-            firstNum = displayValue;
-        };
         let value = button.textContent;
-        operator = value;
-        display.textContent = 0;
+        if (firstNum !== '' && secondNum == '') {
+            secondNum = displayValue;
+            display.textContent = operate(operator, parseInt(firstNum), parseInt(secondNum));
+            firstNum = displayValue;
+            operator = value;
+        } else if (displayValue > 0) {
+            firstNum = displayValue;
+            display.textContent = 0;
+            operator = value;
+        };
     });
 });
 
