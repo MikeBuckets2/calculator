@@ -58,7 +58,17 @@ operators.forEach(button => {
             firstNum = displayValue;
         };
         let value = button.textContent;
+        operator = value;
+        display.textContent = 0;
         console.log(value);
         console.log(firstNum);
     });
+});
+
+const operation = document.querySelector('.operation');
+operation.addEventListener('click', () => {
+     if (displayValue > 0) {
+        secondNum = displayValue;
+    };
+    display.textContent = operate(operator, parseInt(firstNum), parseInt(secondNum));
 });
