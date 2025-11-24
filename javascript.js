@@ -33,11 +33,12 @@ function operate(op, a, b) {
 const display = document.querySelector('.display');
 const digits = document.querySelectorAll('.digits');
 
+let clearDisplay = false;
 let displayValue = 0;
 digits.forEach(button => {
     button.addEventListener('click', () => {
         let value = button.textContent;
-     if (display.textContent == 0) {
+     if (display.textContent == 0 || clearDisplay === true) {
         display.textContent = value;
      } else {
         display.textContent += value;
@@ -60,8 +61,6 @@ operators.forEach(button => {
         let value = button.textContent;
         operator = value;
         display.textContent = 0;
-        console.log(value);
-        console.log(firstNum);
     });
 });
 
@@ -71,4 +70,5 @@ operation.addEventListener('click', () => {
         secondNum = displayValue;
     };
     display.textContent = operate(operator, parseInt(firstNum), parseInt(secondNum));
+    clearDisplay = true;
 });
