@@ -32,8 +32,10 @@ function operate(op, a, b) {
 // You should store the content of the display (the number) in a variable for use in the next step.
 
 const display = document.querySelector('.display');
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => {
+const digits = document.querySelectorAll('.digits');
+
+let displayValue = 0;
+digits.forEach(button => {
     button.addEventListener('click', () => {
         let value = button.textContent;
      if (display.textContent == 0) {
@@ -41,9 +43,9 @@ buttons.forEach(button => {
      } else {
         display.textContent += value;
      };
+     displayValue = display.textContent;
     });
 });
-let displayValue = display.textContent;
 
 const clear = document.querySelector('.clear');
 clear.addEventListener('click', () => {
