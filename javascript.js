@@ -29,7 +29,6 @@ function operate(op, a, b) {
         return divide(a, b);
     };
 };
-// You should store the content of the display (the number) in a variable for use in the next step.
 
 const display = document.querySelector('.display');
 const digits = document.querySelectorAll('.digits');
@@ -50,4 +49,16 @@ digits.forEach(button => {
 const clear = document.querySelector('.clear');
 clear.addEventListener('click', () => {
     display.textContent = 0;
+});
+
+const operators = document.querySelectorAll('.operators');
+operators.forEach(button => {
+    button.addEventListener('click', () => {
+        if (displayValue > 0) {
+            firstNum = displayValue;
+        };
+        let value = button.textContent;
+        console.log(value);
+        console.log(firstNum);
+    });
 });
