@@ -41,11 +41,11 @@ const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
+        let displayValue = button.textContent;
      if (display.textContent == 0) {
-        display.textContent = '';
-        display.textContent += button.textContent;
+        display.textContent = displayValue;
      } else {
-        display.textContent += button.textContent;
+        display.textContent += displayValue;
      };
     });
 });
