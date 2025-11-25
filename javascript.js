@@ -34,6 +34,7 @@ const display = document.querySelector('.display');
 const digits = document.querySelectorAll('.digits');
 
 let clearDisplay = false;
+let operatorButton = false;
 let displayValue = 0;
 digits.forEach(button => {
     button.addEventListener('click', () => {
@@ -44,6 +45,7 @@ digits.forEach(button => {
         display.textContent += value;
      };
      displayValue = display.textContent;
+     operatorButton = false;
     });
 });
 
@@ -55,25 +57,31 @@ clear.addEventListener('click', () => {
 const operators = document.querySelectorAll('.operators');
 operators.forEach(button => {
     button.addEventListener('click', () => {
-        let value = button.textContent;
+        if (operatorButton === true) {
+            return;
+        };
+        operatorButton = true;
         if (firstNum !== '' && secondNum == '') {
             secondNum = displayValue;
-            display.textContent = operate(operator, parseInt(firstNum), parseInt(secondNum));
-            firstNum = displayValue;
-            operator = value;
+            display.textContent = operate(operator, Number(firstNum), Number(secondNum));
         } else if (displayValue > 0) {
             firstNum = displayValue;
             display.textContent = 0;
-            operator = value;
         };
+        let value = button.textContent;
+        operator = value;
+        clearDisplay = true;
     });
 });
 
 const operation = document.querySelector('.operation');
 operation.addEventListener('click', () => {
+    if (operatorButton === true) {
+        return;
+    };
      if (displayValue > 0) {
         secondNum = displayValue;
     };
-    display.textContent = operate(operator, parseInt(firstNum), parseInt(secondNum));
+    display.textContent = operate(operator, Number(firstNum), Number(secondNum));
     clearDisplay = true;
 });
