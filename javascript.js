@@ -35,10 +35,18 @@ const digits = document.querySelectorAll('.digits');
 
 let clearDisplay = false;
 let operatorButton = false;
+let evaluated = false;
 let displayValue = '';
 digits.forEach(button => {
     button.addEventListener('click', () => {
         let value = button.textContent;
+        if (evaluated === true) {
+            firstNum = '';
+            secondNum = '';
+            operator = null;
+            display.textContent = '';
+            evaluated = false;
+        };
      if (display.textContent === '0' || clearDisplay === true) {
         display.textContent = value;
         clearDisplay = false;
@@ -58,6 +66,7 @@ clear.addEventListener('click', () => {
     operator = '';
     displayValue = '';
     operatorButton = false;
+    evaluated = false;
     clearDisplay = false;
 });
 
@@ -68,6 +77,11 @@ operators.forEach(button => {
             return;
         };
         operatorButton = true;
+        if (evaluated === true) {
+            evaluated = false;
+            operator = button.textContent;
+            return;
+        }
         if (firstNum !== '' && secondNum === '') {
             secondNum = displayValue;
             let result = operate(operator, Number(firstNum), Number(secondNum));
@@ -94,5 +108,8 @@ operation.addEventListener('click', () => {
     display.textContent = result;
     firstNum = result;
     secondNum = '';
+    operator = null;
+    operatorButton = false;
+    evaluated = true;
     clearDisplay = true;
 });
