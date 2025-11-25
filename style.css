@@ -1,6 +1,9 @@
 .calculator {
     height: 320px;
     width: 480px;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .display {
