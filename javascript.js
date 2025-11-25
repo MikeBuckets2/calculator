@@ -39,14 +39,13 @@ let displayValue = '';
 digits.forEach(button => {
     button.addEventListener('click', () => {
         let value = button.textContent;
-     if (clearDisplay === true) {
+     if (display.textContent === '0' || clearDisplay === true) {
         display.textContent = value;
         clearDisplay = false;
-     } else if (display.textContent === '0') {
-        display.textContent = value;
      } else {
         display.textContent += value;
      }
+     displayValue = display.textContent;
      operatorButton = false;
     });
 });
