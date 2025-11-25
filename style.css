@@ -1,0 +1,14 @@
+.calculator {
+    height: 320px;
+    width: 480px;
+}
+
+.display {
+    width: 300px;
+    height: 100px;
+}
+
+button {
+    height: 60px;
+    width: 60px;
+}
