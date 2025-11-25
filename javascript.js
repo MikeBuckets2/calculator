@@ -35,7 +35,7 @@ const digits = document.querySelectorAll('.digits');
 
 let clearDisplay = false;
 let operatorButton = false;
-let displayValue = 0;
+let displayValue = '';
 digits.forEach(button => {
     button.addEventListener('click', () => {
         let value = button.textContent;
@@ -61,15 +61,16 @@ operators.forEach(button => {
             return;
         };
         operatorButton = true;
-        if (firstNum !== '' && secondNum == '') {
+        if (firstNum !== '' && secondNum === '') {
             secondNum = displayValue;
-            display.textContent = operate(operator, Number(firstNum), Number(secondNum));
-        } else if (displayValue > 0) {
+            let result = operate(operator, Number(firstNum), Number(secondNum));
+            display.textContent = result;
+            firstNum = result;
+            secondNum = '';
+        } else if (displayValue !== '') {
             firstNum = displayValue;
-            display.textContent = 0;
         };
-        let value = button.textContent;
-        operator = value;
+        operator = button.textContent;
         clearDisplay = true;
     });
 });
