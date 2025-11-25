@@ -52,6 +52,12 @@ digits.forEach(button => {
 const clear = document.querySelector('.clear');
 clear.addEventListener('click', () => {
     display.textContent = 0;
+    firstNum = '';
+    secondNum = '';
+    operator = '';
+    displayValue = '';
+    operatorButton = false;
+    clearDisplay = false;
 });
 
 const operators = document.querySelectorAll('.operators');
