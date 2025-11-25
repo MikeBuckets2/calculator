@@ -80,9 +80,12 @@ operation.addEventListener('click', () => {
     if (operatorButton === true) {
         return;
     };
-     if (displayValue > 0) {
+    if (displayValue !== '') {
         secondNum = displayValue;
     };
-    display.textContent = operate(operator, Number(firstNum), Number(secondNum));
+    let result = operate(operator, Number(firstNum), Number(secondNum));
+    display.textContent = result;
+    firstNum = result;
+    secondNum = result;
     clearDisplay = true;
 });
