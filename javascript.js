@@ -39,8 +39,9 @@ let displayValue = '';
 digits.forEach(button => {
     button.addEventListener('click', () => {
         let value = button.textContent;
-     if (display.textContent == 0 || clearDisplay === true) {
+     if (display.textContent === '0' || clearDisplay === true) {
         display.textContent = value;
+        clearDisplay = false;
      } else {
         display.textContent += value;
      };
