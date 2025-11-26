@@ -1,5 +1,5 @@
 .calculator {
-    height: 320px;
+    height: 480px;
     width: 480px;
     border: 2px solid black;
     display: flex;
@@ -24,17 +24,21 @@ button {
 }
 
 .firstRow,
-.secondRow {
+.secondRow,
+.thirdRow,
+.reset {
     display: flex;
     border: 2px solid black;
     gap: 10px;
     width: 480px;
     justify-content: center;
+    align-items: center;
 }
 
 .screen {
     display: flex;
     justify-content: center;
+    align-items: center;
     border: 2px solid black;
     width: 480px;
 }
