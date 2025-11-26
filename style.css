@@ -21,6 +21,11 @@
 button {
     height: 60px;
     width: 60px;
+    font-size: 30px;
+}
+
+.reset button {
+    width: 120px;
 }
 
 .firstRow,
@@ -28,7 +33,6 @@ button {
 .thirdRow,
 .reset {
     display: flex;
-    border: 2px solid black;
     gap: 10px;
     width: 480px;
     justify-content: center;
@@ -39,6 +43,5 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
     width: 480px;
 }
