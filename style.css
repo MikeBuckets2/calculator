@@ -17,7 +17,7 @@
     padding: 10px;
     box-sizing: border-box;
     margin: 25px;
-    background-color: gray;
+    background-color: white;
 }
 
 button {
@@ -54,4 +54,8 @@ button {
 .firstRow button,
 .secondRow button {
     background-color: gold;
+}
+
+.thirdRow button {
+    background-color: gray;
 }
