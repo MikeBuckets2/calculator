@@ -1,17 +1,20 @@
+function roundNum(num) {
+    return Math.round(num * 1000) / 1000;
+}
 function add(a, b) {
-    return a + b;
+    return roundNum(a + b);
 };
 
 function subtract(a, b) {
-    return a - b;
+    return roundNum(a - b);
 };
 
 function multiply(a, b) {
-    return a * b;
+    return roundNum(a * b);
 };
 
 function divide(a, b) {
-    return a / b;
+    return roundNum(a / b);
 };
 
 let firstNum = '';
