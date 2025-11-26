@@ -23,7 +23,8 @@ button {
     width: 60px;
 }
 
-.firstRow {
+.firstRow,
+.secondRow {
     display: flex;
     border: 2px solid black;
     gap: 10px;
