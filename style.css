@@ -4,6 +4,7 @@
     border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
+    background-color: purple;
 }
 
 .display {
@@ -16,6 +17,7 @@
     padding: 10px;
     box-sizing: border-box;
     margin: 25px;
+    background-color: gray;
 }
 
 button {
