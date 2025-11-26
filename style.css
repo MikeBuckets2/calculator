@@ -22,3 +22,16 @@ button {
     height: 60px;
     width: 60px;
 }
+
+.firstRow {
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid black;
+}
+
+.screen {
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    width: 480px;
+}
