@@ -29,6 +29,8 @@ button {
 .reset button {
     width: 120px;
     border: 2px solid gold;
+    background-color: black;
+    color: gold;
 }
 
 .firstRow,
