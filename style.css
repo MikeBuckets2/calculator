@@ -28,6 +28,7 @@ button {
 
 .reset button {
     width: 120px;
+    border: 2px solid gold;
 }
 
 .firstRow,
@@ -46,4 +47,9 @@ button {
     justify-content: center;
     align-items: center;
     width: 480px;
+}
+
+.firstRow button,
+.secondRow button {
+    background-color: gold;
 }
